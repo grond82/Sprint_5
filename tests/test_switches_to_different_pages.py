@@ -2,6 +2,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from tests.locators import TestLocators
 from tests.url import TestUrl
+from tests.data import Data
 
 class TestSwitches:
 
@@ -15,8 +16,8 @@ class TestSwitches:
         driver_chrome.get(TestUrl.HOMEPAGE_URL)
         driver_chrome.find_element(*TestLocators.BUTTON_ENTER_TO_ACCOUNT).click()
         WebDriverWait(driver_chrome, 5).until(expected_conditions.url_contains('/login'))
-        driver_chrome.find_element(*TestLocators.LOGIN_EMAIL_FIELD).send_keys("timofei_vasilev_20_123@yandex.ru")
-        driver_chrome.find_element(*TestLocators.LOGIN_PASSWORD_FIELD).send_keys("1qazXSW@")
+        driver_chrome.find_element(*TestLocators.LOGIN_EMAIL_FIELD).send_keys(Data.EMAIL)
+        driver_chrome.find_element(*TestLocators.LOGIN_PASSWORD_FIELD).send_keys(Data.PASSWORD)
         driver_chrome.find_element(*TestLocators.BUTTON_ENTER_ON_LOGIN_PAGE).click()
         WebDriverWait(driver_chrome, 3).until(expected_conditions.url_to_be(TestUrl.HOMEPAGE_URL))
         driver_chrome.find_element(*TestLocators.MY_CABINET).click()
@@ -27,8 +28,8 @@ class TestSwitches:
         driver_chrome.get(TestUrl.HOMEPAGE_URL)
         driver_chrome.find_element(*TestLocators.BUTTON_ENTER_TO_ACCOUNT).click()
         WebDriverWait(driver_chrome, 5).until(expected_conditions.url_contains('/login'))
-        driver_chrome.find_element(*TestLocators.LOGIN_EMAIL_FIELD).send_keys("timofei_vasilev_20_123@yandex.ru")
-        driver_chrome.find_element(*TestLocators.LOGIN_PASSWORD_FIELD).send_keys("1qazXSW@")
+        driver_chrome.find_element(*TestLocators.LOGIN_EMAIL_FIELD).send_keys(Data.EMAIL)
+        driver_chrome.find_element(*TestLocators.LOGIN_PASSWORD_FIELD).send_keys(Data.PASSWORD)
         driver_chrome.find_element(*TestLocators.BUTTON_ENTER_ON_LOGIN_PAGE).click()
         WebDriverWait(driver_chrome, 3).until(expected_conditions.url_to_be(TestUrl.HOMEPAGE_URL))
         driver_chrome.find_element(*TestLocators.MY_CABINET).click()
@@ -40,8 +41,8 @@ class TestSwitches:
         driver_chrome.get(TestUrl.HOMEPAGE_URL)
         driver_chrome.find_element(*TestLocators.BUTTON_ENTER_TO_ACCOUNT).click()
         WebDriverWait(driver_chrome, 5).until(expected_conditions.url_contains('/login'))
-        driver_chrome.find_element(*TestLocators.LOGIN_EMAIL_FIELD).send_keys("timofei_vasilev_20_123@yandex.ru")
-        driver_chrome.find_element(*TestLocators.LOGIN_PASSWORD_FIELD).send_keys("1qazXSW@")
+        driver_chrome.find_element(*TestLocators.LOGIN_EMAIL_FIELD).send_keys(Data.EMAIL)
+        driver_chrome.find_element(*TestLocators.LOGIN_PASSWORD_FIELD).send_keys(Data.PASSWORD)
         driver_chrome.find_element(*TestLocators.BUTTON_ENTER_ON_LOGIN_PAGE).click()
         WebDriverWait(driver_chrome, 3).until(expected_conditions.url_to_be(TestUrl.HOMEPAGE_URL))
         driver_chrome.find_element(*TestLocators.MY_CABINET).click()
